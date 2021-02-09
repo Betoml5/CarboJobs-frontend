@@ -1,4 +1,6 @@
 import axios from 'axios';
+const API = 'http://localhost:3001/api/users/';
 
-axios.get('http:localhost:3001/api/users/all')
-    .then(res => console.log(res))
+
+
+
