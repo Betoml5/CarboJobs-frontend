@@ -1,20 +1,31 @@
-import axios from 'axios';
-const API = 'http://localhost:3001/api/workers/';
+import axios from "axios";
+const API = "http://localhost:3001/api";
 
-const getWorkers = async () =>{
-    const response = await axios.get(API);
-    const data = await response;
-    return data;
+const getWorkers = async () => {
+  try {
+    const response = await axios.get(`${API}/workers/all`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const getWorker = async (id) => {
-    const response = await axios.get(`${API}/users/${id}`);
-    const data = await response;
-    return data;
+  try {
+    const response = await axios.get(`${API}/workers/worker/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export  {getWorkers, getWorker}
+const getBestWorkers = async (limit) => {
+  try {
+    const response = await axios.get(`${API}/workers/rating/${limit}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-
-
-
+export { getWorkers, getWorker, getBestWorkers };

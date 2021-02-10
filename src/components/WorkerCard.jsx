@@ -1,8 +1,9 @@
 import React from 'react'
 
 
-const WorkerCard = () => {
-    <div className="workerCard">
+const WorkerCard = (props) => {
+    return(
+        <div className="workerCard">
             <picture className="workerCard__img">
 
                 {/* <source media="(min-width: )" srcset=""/> */}
@@ -19,6 +20,7 @@ const WorkerCard = () => {
                 <div className="workerCard__tags-tag">Carpenter</div>
             </div>
         </div>
+    );
 };
 
 export default WorkerCard;
