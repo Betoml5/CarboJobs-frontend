@@ -2,7 +2,6 @@ import React from "react";
 import "./assets/scss/App.scss";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import UserCard from "./components/UserCard";
 import About from "./containers/About";
 import Layout from "./components/Layout";
 import WorkersContainer from "./containers/WorkersContainer";

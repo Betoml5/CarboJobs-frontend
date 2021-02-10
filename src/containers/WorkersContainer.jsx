@@ -13,7 +13,7 @@ const WorkersContainer = (props) => {
   }, []);
   return (
     <div className="workersContainer">
-      {workers && workers.map((worker) => <WorkerCard key={worker.id} data={worker} />)}
+      {workers.length > 0 ? workers.map((worker) => <WorkerCard key={worker.id} data={worker}  />) : <p>Cargando...</p>}
     </div>
   );
 };

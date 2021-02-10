@@ -13,7 +13,7 @@ const getWorkers = async () => {
 const getWorker = async (id) => {
   try {
     const response = await axios.get(`${API}/workers/worker/${id}`);
-    return response.data;
+    return response.data || [];
   } catch (error) {
     console.log(error);
   }
@@ -22,7 +22,7 @@ const getWorker = async (id) => {
 const getBestWorkers = async (limit) => {
   try {
     const response = await axios.get(`${API}/workers/rating/${limit}`);
-    return response.data;
+    return response.data || [];
   } catch (error) {
     console.log(error);
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 const WorkerCard = (props) => {
     return(
         <div className="workerCard">
