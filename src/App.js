@@ -6,6 +6,7 @@ import UserCard from "./components/UserCard";
 import About from "./containers/About";
 import Layout from "./components/Layout";
 import WorkersContainer from "./containers/WorkersContainer";
+import WorkerLogin from "./containers/WorkerLogin";
 
 const App = () => (
   // Here will be the componentes
@@ -14,6 +15,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={WorkersContainer} />
         <Route exact path="/nosotros" component={About} />
+        <Route exact path="/login" component={WorkerLogin} />
       </Switch>
     </Layout>
   </BrowserRouter>

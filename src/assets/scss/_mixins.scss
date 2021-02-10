@@ -1,0 +1,5 @@
+@mixin input{
+    border: none;
+    outline: none;
+    padding: map-get($map: $pd, $key: normal);
+}

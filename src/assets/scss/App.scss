@@ -1,3 +1,6 @@
-@import './normalize';
-@import './vars.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,700&display=swap');
+@import './_normalize';
+@import './_vars.scss';
+@import './_mixins.scss';
 @import './_userCard.scss';
+@import './_workerLogin.scss';
