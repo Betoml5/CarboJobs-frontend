@@ -17,10 +17,10 @@
   align-items: center;
   height: 25%;
 
-  & h2{
+  & h2 {
     font-family: $fm;
-    letter-spacing:3px;
-    font-size: map-get($map: $fs, $key: big);
+    letter-spacing: 3px;
+    font-size: map-get($map: $fs, $key: normal);
   }
 
   & picture {
@@ -42,39 +42,17 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    & input[type="email"],
-    input[type="password"] {
-      margin-top: 6px;
-      @include input;
+    & .inputEmail,
+    .inputPassword {
+      @include textInput;
     }
 
-    input[type="submit"]{
-      background-image: linear-gradient(
-        to right,
-        #1fa2ff 0%,
-        #12d8fa 51%,
-        #1fa2ff 100%
-      );
-    }
-    input[type="submit"] {
-      margin-top: 6px;
-      padding: 15px 45px;
-      text-align: center;
-      text-transform: uppercase;
-      transition: 0.5s;
-      background-size: 200% auto;
-      color: white;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      border-radius: map-get($map: $pd, $key: small);
-      display: block;
-      outline: none;
-      border: none;
+    .inputSubmit {
+      @include inputSubmit;
     }
 
-    input[type="submit"]:hover {
-      background-position: right center; /* change the direction of the change here */
-      color: #fff;
-      text-decoration: none;
+    .inputSubmit:hover {
+     
     }
   }
 }
