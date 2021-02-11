@@ -1,0 +1,50 @@
+.workerLogin {
+
+  @include backgroundGradient;
+
+  height: 100vh;
+  width: 100%;
+  padding: map-get($map: $pd, $key: small);
+}
+
+.workerLogin__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+
+  & h2 {
+    font-family: $fm;
+    letter-spacing: 3px;
+    font-size: map-get($map: $fs, $key: normal);
+  }
+
+  & picture {
+    img {
+      width: 100px;
+    }
+  }
+}
+
+.workerLogin__form {
+  display: flex;
+    justify-content: center;
+  align-items: center;
+  height: 40%;
+  border-radius: 6px;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    & .inputEmail,
+    .inputPassword {
+      @include textInput;
+    }
+
+    .inputSubmit {
+      @include inputSubmit;
+    }
+  }
+}

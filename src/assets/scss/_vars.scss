@@ -5,11 +5,21 @@ $secondary-color: #ec4646;
 $auxiliar-color-1: #663f3f;
 $auxiliar-color-2: #bbf1fa;
 
+$fm: 'Roboto';
+
 $fs: (
-    big: 2.4rem,
+    x-big: 2.4rem,
+    big: 1.8rem,
     normal: 1.6rem,
     small: 1.4rem,
     x-small: 1.2rem
+);
+
+$pd: (
+    big: 24px,
+    normal: 12px,
+    small: 4px,
+    x-small: 2px
 );
 
 $border-radius-card: 6px;

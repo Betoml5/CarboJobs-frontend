@@ -1,0 +1,39 @@
+@mixin textInput {
+  border: none;
+  outline: none;
+  padding: map-get($map: $pd, $key: normal);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+@mixin backgroundGradient {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(62, 161, 219, 1) 11.2%,
+    rgba(93, 52, 236, 1) 100.2%
+  );
+}
+
+@mixin inputSubmit {
+  cursor: pointer;
+  margin-top: 6px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  border-radius: map-get($map: $pd, $key: small);
+  display: block;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  background: none;
+  font-size: map-get($map: $fs, $key: small);
+  :hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+}

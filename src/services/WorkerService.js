@@ -1,7 +1,8 @@
 import axios from "axios";
-const API = "http://localhost:3001/api";
+const API = "http://localhost:3002/api";
 
 const getWorkers = async () => {
+
   try {
     const response = await axios.get(`${API}/workers/all`);
     return response.data;
