@@ -22,6 +22,7 @@
   border: none;
   text-decoration: none;
   background: none;
+  font-size: map-get($map: $fs, $key: small);
   :hover {
     background-position: right center; /* change the direction of the change here */
     color: #fff;
