@@ -31,20 +31,25 @@
   left: -1000px;
   padding: map-get($map: $pd, $key: normal);
   top: 57px;
-  border-radius: 6px;
   transition: 150ms all ease;
   background-image: linear-gradient(
     109.6deg,
     rgba(62, 161, 219, 1) 11.2%,
     rgba(93, 52, 236, 1) 100.2%
   );
-  & .header__menu-item {
+  .header__menu-item {
     display: flex;
     align-items: center;
 
     font-size: map-get($map: $fs, $key: big);
     text-decoration: none;
     color: #fff;
+  }
+  .is-active {
+    // letter-spacing: -2px;
+    color: #fff;
+    text-shadow: 0 0 12px #fff, 0 0 0px #fff, 0 0 15px #fff, 0 0 10px #3ea1db,
+      0 0 6px #3ea1db;
   }
 
   .header__menu-item {

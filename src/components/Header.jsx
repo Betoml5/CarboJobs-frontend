@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import homeIcon from "../assets/static/images/home.png";
 import accountIcon from "../assets/static/images/account.png";
@@ -21,22 +21,42 @@ const Header = () => {
         <img src={menuBtnWhite} alt="menuBtn" />
       </div>
       <nav ref={menuRes} className="header__menu" id="headerMenu">
-        <Link className="header__menu-item" to="#">
+        <NavLink
+          exact={true}
+          activeClassName="is-active"
+          className="header__menu-item"
+          to="/"
+        >
           <img src={homeIcon} alt="" />
           <p>Inicio</p>
-        </Link>
-        <Link className="header__menu-item" to="#">
+        </NavLink>
+        <NavLink
+          exact={true}
+          activeClassName="is-active"
+          className="header__menu-item"
+          to="/login"
+        >
           <img src={accountIcon} alt="" />
           <p>Cuenta</p>
-        </Link>
-        <Link className="header__menu-item" to="#">
+        </NavLink>
+        <NavLink
+          exact={true}
+          activeClassName="is-active"
+          className="header__menu-item"
+          to="/workers/register"
+        >
           <img src={afiliateIcon} alt="" />
           <p> Afiliarse</p>
-        </Link>
-        <Link className="header__menu-item" to="#">
+        </NavLink>
+        <NavLink
+          exact={true}
+          activeClassName="is-active"
+          className="header__menu-item"
+          to="/nosotros"
+        >
           <img src={aboutIcon} alt="" />
           <p>Acerca de nosotros</p>
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );
