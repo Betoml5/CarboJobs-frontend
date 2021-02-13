@@ -21,7 +21,7 @@ const WorkerRegister = () => {
         src="https://docs.google.com/forms/d/e/1FAIpQLSd3bJUBP2UZGS68METX-mSkm0UnjUPJ1d2ldKAECoJG7RMngw/viewform?embedded=true"
         width="300"
         height="1122"
-        frameborder="0"
+        frameBorder="0"
         marginheight="0"
         marginwidth="0"
       >
