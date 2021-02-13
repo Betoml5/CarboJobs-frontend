@@ -1,4 +1,7 @@
 .workerCard {
+
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +14,11 @@
 
   width: 80%;
   height: 300px;
-  margin: 18px 0px;
+  margin: 0px 10px 0;
+
+  min-width: 190px;
+  max-width: 300px;
+  scroll-snap-align: center;
 
   & .workerCard__img {
     width: 14px;
