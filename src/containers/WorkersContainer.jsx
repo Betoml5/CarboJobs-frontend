@@ -25,8 +25,8 @@ const WorkersContainer = (props) => {
 
       <div className="workersContainer__slider">
         {workers ? (
-          workers.map((worker) => (
-            <WorkerCard worker={worker} key={worker.name} />
+          workers.map((worker, i) => (
+            <WorkerCard key={worker.id} worker={worker} />
           ))
         ) : (
           <p>Loading...</p>

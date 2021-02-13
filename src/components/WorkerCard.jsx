@@ -23,13 +23,13 @@ const WorkerCard = ({ worker }) => {
 
       <div className="workerCard__tags">
         {/* Here we are going to do a map with the tags */}
-        {worker.tags.map((tag) => (
-          <p className="worker_tag">{tag}</p>
+        {worker.tags.map((tag, index) => ( 
+          <p key={index} className="worker_tag">{tag}</p>
         ))}
       </div>
 
       <div className="workerCard__rating">
-        <Rating rating={worker.rating} />
+        <Rating rating={worker.rating}  />
       </div>
     </div>
   );
