@@ -1,10 +1,8 @@
 .workerCard {
-
   position: relative;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
   // background-color: $primary-color;
@@ -21,10 +19,47 @@
   scroll-snap-align: center;
 
   & .workerCard__img {
-    width: 14px;
+    width: 36px;
 
     & img {
       width: 100%;
     }
   }
+}
+
+.workerCard__img-container {
+  @include flexCardCenter;
+  // Here we overide the 25% height
+  height: 35%;
+  // background: red;
+  padding: map-get($map: $pd, $key: normal);
+}
+
+.workerCard__names {
+  @include flexCardCenter;
+  flex-direction: column;
+  // background-color: purple
+}
+
+.workerCard__tags {
+  @include flexCardCenter;
+  flex-wrap: wrap;
+  height: auto;
+ 
+  // background-color: yellowgreen;
+}
+
+.workerCard__rating {
+  @include flexCardCenter;
+  // background-color:salmon;
+}
+
+
+.worker_tag{
+  text-align: center;
+  min-width: 52px;
+  border-radius: 2px;
+  padding: map-get($map: $pd, $key: small);
+  background-color: #fff;
+  margin: 2px 2px;
 }
