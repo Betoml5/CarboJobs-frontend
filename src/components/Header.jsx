@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import carbonIcon from '../assets/static/images/carbonLogo.png'
 import homeIcon from "../assets/static/images/home.png";
 import accountIcon from "../assets/static/images/account.png";
 import afiliateIcon from "../assets/static/images/network.png";
@@ -19,6 +20,7 @@ const Header = () => {
     <header className="header">
       <div onClick={handleMenu} id="btnMenu" className="header__btn-menu">
         <img src={menuBtnWhite} alt="menuBtn" />
+        <img src={carbonIcon} alt=""/>
       </div>
       <nav ref={menuRes} className="header__menu" id="headerMenu">
         <NavLink

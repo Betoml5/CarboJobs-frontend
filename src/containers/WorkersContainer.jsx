@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WorkerCard from "../components/WorkerCard";
 import { useFirebaseApp } from "reactfire";
+import workersMock from "../utils/workersMock";
 import {
   getBestWorkers,
   getWorker,
@@ -12,17 +13,25 @@ const WorkersContainer = (props) => {
   const [workers, setWorkers] = useState([]);
 
   useEffect(() => {
-    getBestWorkers(3).then((data) => setWorkers(data.workers));
+    // getBestWorkers(3).then((data) => setWorkers(data.workers));
+    setWorkers(workersMock);
   }, []);
   return (
     <div className="workersContainer">
-      {workers ? (
-        workers.map((worker) => (
-          <WorkerCard worker={worker} key={worker.name} />
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
+      <div className="workersContainer__banner">
+        {/* <h2>¡Los mejores trabajadores de CarboJobs!</h2> */}
+        <h2>Best's month workers</h2>
+      </div>
+
+      <div className="workersContainer__slider">
+        {workers ? (
+          workers.map((worker) => (
+            <WorkerCard worker={worker} key={worker.name} />
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -37,3 +37,11 @@
     text-decoration: none;
   }
 }
+
+@mixin flexCardCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  width: 100%;
+}
