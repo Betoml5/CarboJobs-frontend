@@ -31,27 +31,37 @@
   @include flexCardCenter;
   // Here we overide the 25% height
   height: 35%;
-  // background: red;
   padding: map-get($map: $pd, $key: normal);
+  min-height: 35%
 }
 
 .workerCard__names {
   @include flexCardCenter;
   flex-direction: column;
-  // background-color: purple
+  min-height: 25%;
+
+ & .workerCard__names-name{
+   font-weight: 500;
+   font-size: map-get($map: $fs, $key: big);
+ }
+
+ & .workerCard__names-lastName{
+   font-weight: 300;
+  font-size: map-get($map: $fs, $key: small);
+}
 }
 
 .workerCard__tags {
   @include flexCardCenter;
   flex-wrap: wrap;
   height: auto;
-
-  // background-color: yellowgreen;
+  min-height: 15%;
+  overflow-y: scroll;
 }
 
 .workerCard__rating {
   @include flexCardCenter;
-  // background-color:salmon;
+  min-height: 25%;
 }
 
 .worker_tag {
@@ -59,6 +69,6 @@
   min-width: 52px;
   border-radius: 2px;
   padding: map-get($map: $pd, $key: small);
-  background-color: #fff;
   margin: 2px 2px;
+  background-color: #fff;
 }
