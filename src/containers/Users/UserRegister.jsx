@@ -39,19 +39,19 @@ const UserRegister = () => {
             className="textInput"
           />
           <input
-            type="tel"
-            name="phone"
-            id="phone"
-            autoComplete="tel"
-            placeholder="Numero Celular"
-            className="textInput"
-          />
-          <input
             type="email"
             name="email"
             id="email"
             autoComplete="email"
             placeholder="Correo Electronico"
+            className="textInput"
+          />
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            autoComplete="tel"
+            placeholder="Numero Celular"
             className="textInput"
           />
           <input

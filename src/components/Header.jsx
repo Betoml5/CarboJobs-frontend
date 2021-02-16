@@ -7,6 +7,7 @@ import accountIcon from "../assets/static/images/account.png";
 import afiliateIcon from "../assets/static/images/network.png";
 import aboutIcon from "../assets/static/images/about.png";
 import menuBtnWhite from "../assets/static/images/menuIconWhite.png";
+import registerIcon from '../assets/static/images/add-user.png';
 
 const Header = () => {
   const hasUser = false;
@@ -45,16 +46,29 @@ const Header = () => {
             <p>Cuenta</p>
           </NavLink>
         ) : (
-          <NavLink
-            exact={true}
-            activeClassName="is-active"
-            className="header__menu-item"
-            to="/login"
-          >
-            <img src={accountIcon} alt="" />
-            <p>Iniciar Sesion</p>
-          </NavLink>
-        )}
+            <NavLink
+              exact={true}
+              activeClassName="is-active"
+              className="header__menu-item"
+              to="/login"
+            >
+              <img src={accountIcon} alt="" />
+              <p>Iniciar Sesion</p>
+            </NavLink>
+          )}
+          {
+          hasUser ?
+          null 
+          : <NavLink
+          exact={true}
+          activeClassName="is-active"
+          className="header__menu-item"
+          to="/users/register">
+            <img src={registerIcon} alt="accountIcon"/>
+            <p>Registrarse</p>
+        </NavLink>
+        
+        }
         <NavLink
           exact={true}
           activeClassName="is-active"
