@@ -17,10 +17,6 @@ const App = () => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route exact={true} path="/users/register" component={UserRegister} />
-        <Route exact={true} path="/users/login" component={UserLogin} />
-        <Route exact={true} path="/users/detail" component={UserDetail} />
-        
         <Route exact={true} path="/" component={WorkersContainer} />
         <Route exact={true} path="/workers/login" component={WorkerLogin} />
         <Route
@@ -28,6 +24,12 @@ const App = () => (
           path="/workers/register"
           component={WorkerRegister}
         />
+
+        
+        <Route exact={true} path="/users/register" component={UserRegister} />
+        <Route exact={true} path="/users/login" component={UserLogin} />
+        <Route exact={true} path="/users/detail" component={UserDetail} />
+
         <Route exact={true} path="/nosotros" component={About} />
       </Switch>
     </Layout>

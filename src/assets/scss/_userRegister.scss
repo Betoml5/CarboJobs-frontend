@@ -24,22 +24,12 @@
   max-height: 70%;
 }
 
-.userRegister__form-wraper{
+.userRegister__form-wraper {
   margin: 6px 6px;
   text-align: center;
-  // background-color: aquamarine;
-  // box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
-// .special{
-//   width: 80%;
-//   color: #fff;
-//   background: none;
-//   border-left: 1px solid rgba(255,255,255,0.5);
-//   border-bottom: 1px solid rgba(255,255,255,0.5);
-//   box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
-// }
-
-// .special::placeholder{
-//   color: #fff;
-// }
+.special {
+  width: 90%;
+}

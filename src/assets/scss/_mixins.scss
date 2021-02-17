@@ -4,6 +4,13 @@
   padding: map-get($map: $pd, $key: normal);
   border-radius: 2px;
   margin: 6px 6px;
+  background: none;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+}
+
+.textInput::placeholder {
+  color: #fff;
 }
 
 .inputSubmit {

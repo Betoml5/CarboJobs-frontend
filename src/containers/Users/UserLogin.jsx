@@ -1,41 +1,13 @@
-import axios from "axios";
 import { useHistory } from "react-router-dom";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { LoginUser, getUser } from "../../services/UserService";
 import carbonLogo from "../../assets/static/images/carbonLogo.png";
 
 const UserLogin = (props) => {
   let history = useHistory();
-
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-
-  const getUser = (e) => {
-    e.preventDefault();
-    axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:3001/api/users/pass",
-    }).then((res) => console.log(res));
-  };
-
-
-
-  const login = (e) => {
-    e.preventDefault();
-    axios({
-      method: "POST",
-      data: {
-        email: loginEmail,
-        password: loginPassword,
-      },
-      withCredentials: true,
-      url: "http://localhost:3001/api/users/login",
-    }).then((res) => console.log(res));
-
-    history.push('/users/detail')
-  };
-
   const welcomeText = "Iniciar sesion.";
 
   return (
@@ -51,7 +23,7 @@ const UserLogin = (props) => {
         <form>
           <input
             type="email"
-            className="inputEmail"
+            className="textInput"
             name="email"
             id="email"
             placeholder="Email"
@@ -59,25 +31,13 @@ const UserLogin = (props) => {
           />
           <input
             type="password"
-            className="inputPassword"
+            className="textInput"
             name="password"
             id="password"
             placeholder="Contraseña"
             onChange={(e) => setLoginPassword(e.target.value)}
           />
-          <input
-            type="submit"
-            className="inputSubmit"
-            value="Iniciar Sesión"
-            onClick={login}
-          />
-          <input
-            type="submit"
-            className="inputSubmit"
-            value="Obtener usuario"
-            onClick={getUser}
-          />
-
+          <input type="submit" className="inputSubmit" value="Iniciar Sesión" />
           <Link className="inputSubmit" to="/users/register">
             {" "}
             ¿Aún no tienes cuenta? Registrate
