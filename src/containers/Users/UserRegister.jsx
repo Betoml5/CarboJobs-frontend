@@ -14,13 +14,14 @@ const UserRegister = () => {
 
       <div className="userRegister__form">
         <form action="">
-          <input
+        <div className="userRegister__form-wraper">
+        <input
             type="text"
             name="name"
             id="name"
             autoComplete="name"
             placeholder="Nombre"
-            className="textInput"
+            className="textInput special"
           />
           <input
             type="text"
@@ -28,15 +29,17 @@ const UserRegister = () => {
             id="last_name"
             autoComplete="family-name"
             placeholder="Apellido"
-            className="textInput"
+            className="textInput special"
           />
-          <input
+        </div>
+        <div className="userRegister__form-wraper">
+        <input
             type="text"
             name="nickname"
             id="nickname"
             autoComplete="nickname"
             placeholder="Nombre de usuario"
-            className="textInput"
+            className="textInput special"
           />
           <input
             type="email"
@@ -44,15 +47,17 @@ const UserRegister = () => {
             id="email"
             autoComplete="email"
             placeholder="Correo Electronico"
-            className="textInput"
+            className="textInput special"
           />
-          <input
+        </div>
+        <div className="userRegister__form-wraper">
+        <input
             type="tel"
             name="phone"
             id="phone"
             autoComplete="tel"
             placeholder="Numero Celular"
-            className="textInput"
+            className="textInput special"
           />
           <input
             type="password"
@@ -60,8 +65,9 @@ const UserRegister = () => {
             id="password"
             autoComplete="password"
             placeholder="Contraseña"
-            className="textInput"
+            className="textInput special"
           />
+        </div>
           <input type="submit" className="inputSubmit" value="Registrarse" />
           <Link className="inputSubmit" to="/users/login">
             ¿Ya tienes cuenta? Inicia Sesion

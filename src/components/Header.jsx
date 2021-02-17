@@ -50,7 +50,7 @@ const Header = () => {
               exact={true}
               activeClassName="is-active"
               className="header__menu-item"
-              to="/login"
+              to="/users/login"
             >
               <img src={accountIcon} alt="" />
               <p>Iniciar Sesion</p>

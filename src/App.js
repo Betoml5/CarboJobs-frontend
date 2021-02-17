@@ -19,10 +19,10 @@ const App = () => (
       <Switch>
         <Route exact={true} path="/users/register" component={UserRegister} />
         <Route exact={true} path="/users/login" component={UserLogin} />
-        <Route exact={true} path="/users/:id" component={UserDetail} />
-
+        <Route exact={true} path="/users/detail" component={UserDetail} />
+        
         <Route exact={true} path="/" component={WorkersContainer} />
-        <Route exact={true} path="/login" component={WorkerLogin} />
+        <Route exact={true} path="/workers/login" component={WorkerLogin} />
         <Route
           exact={true}
           path="/workers/register"
