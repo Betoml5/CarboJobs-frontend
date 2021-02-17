@@ -1,20 +1,19 @@
-@mixin textInput {
+.textInput {
   border: none;
   outline: none;
   padding: map-get($map: $pd, $key: normal);
   border-radius: 2px;
-  margin-top: 6px;
+  margin: 6px 6px;
+  background: none;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
 }
 
-@mixin backgroundGradient {
-  background-image: linear-gradient(
-    109.6deg,
-    rgba(62, 161, 219, 1) 11.2%,
-    rgba(93, 52, 236, 1) 100.2%
-  );
+.textInput::placeholder {
+  color: #fff;
 }
 
-@mixin inputSubmit {
+.inputSubmit {
   cursor: pointer;
   margin-top: 6px;
   padding: 15px 45px;
@@ -38,10 +37,54 @@
   }
 }
 
+@mixin componentForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  border-radius: 6px;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+}
+
+@mixin componentLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  min-height: 20%;
+
+  & picture {
+    img {
+      width: 100px;
+      filter: drop-shadow(0px 0px 10px #fff);
+    }
+  }
+}
+
+@mixin backgroundGradient {
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(62, 161, 219, 1) 11.2%,
+    rgba(93, 52, 236, 1) 100.2%
+  );
+}
+
 @mixin flexCardCenter {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 25%;
   width: 100%;
+}
+
+@mixin componentContainer {
+  width: 100%;
+  height: 100vh;
+  padding: map-get($map: $pd, $key: small);
 }

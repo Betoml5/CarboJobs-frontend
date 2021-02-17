@@ -3,25 +3,34 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import "./assets/scss/App.scss";
 
-import About from "./containers/About";
 import Layout from "./components/Layout";
-import WorkersContainer from "./containers/WorkersContainer";
-import WorkerLogin from "./containers/WorkerLogin";
-import WorkerRegister from "./containers/WorkerRegister";
+import UserDetail from "./components/UserDetail";
 
+import About from "./containers/About";
+import WorkerLogin from "./containers/Workers/WorkerLogin";
+import WorkersContainer from "./containers/Workers/WorkersContainer";
+import WorkerRegister from "./containers/Workers/WorkerRegister";
+import UserLogin from "./containers/Users/UserLogin";
+import UserRegister from "./containers/Users/UserRegister";
 const App = () => (
   // Here will be the componentes
   <BrowserRouter>
     <Layout>
       <Switch>
         <Route exact={true} path="/" component={WorkersContainer} />
-        <Route exact={true} path="/nosotros" component={About} />
-        <Route exact={true} path="/login" component={WorkerLogin} />
+        <Route exact={true} path="/workers/login" component={WorkerLogin} />
         <Route
           exact={true}
           path="/workers/register"
           component={WorkerRegister}
         />
+
+        
+        <Route exact={true} path="/users/register" component={UserRegister} />
+        <Route exact={true} path="/users/login" component={UserLogin} />
+        <Route exact={true} path="/users/detail" component={UserDetail} />
+
+        <Route exact={true} path="/nosotros" component={About} />
       </Switch>
     </Layout>
   </BrowserRouter>
