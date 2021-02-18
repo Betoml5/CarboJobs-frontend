@@ -1,14 +1,26 @@
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import User from "../../services/User";
 import { LoginUser, getUser } from "../../services/UserService";
 import carbonLogo from "../../assets/static/images/carbonLogo.png";
 
 const UserLogin = (props) => {
   let history = useHistory();
+
+
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const welcomeText = "Iniciar sesion.";
+  const userService = new User();
+
+  const loginUser = (e) => {
+    e.preventDefault();
+    userService
+      .loginUser(loginEmail, loginPassword)
+      .then((res) => console.log(res))
+      
+      history.push('/users/detail')
+  };
 
   return (
     <div className="workerLogin">
@@ -37,7 +49,12 @@ const UserLogin = (props) => {
             placeholder="Contraseña"
             onChange={(e) => setLoginPassword(e.target.value)}
           />
-          <input type="submit" className="inputSubmit" value="Iniciar Sesión" />
+          <input
+            type="submit"
+            className="inputSubmit"
+            value="Iniciar Sesión"
+            onClick={loginUser}
+          />
           <Link className="inputSubmit" to="/users/register">
             {" "}
             ¿Aún no tienes cuenta? Registrate

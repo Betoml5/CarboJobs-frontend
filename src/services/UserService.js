@@ -18,6 +18,15 @@ const LoginUser = async (email, password) => {
   }
 };
 
+const LogoutUser = async () => {
+  const response = await axios({
+    method: "GET",
+    url: `${API}/logout`,
+    withCredentials: true,
+  });
+  return response;
+};
+
 const getUser = async () => {
   try {
     const response = await axios({
@@ -30,15 +39,6 @@ const getUser = async () => {
   } catch (error) {
     console.log(error);
   }
-};
-
-const LogoutUser = () => {
-  const response = axios({
-    method: "GET",
-    url: `${API}/logout`,
-    withCredentials: true,
-  });
-  return response;
 };
 
 export { LoginUser, getUser, LogoutUser };
