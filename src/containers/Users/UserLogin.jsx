@@ -1,25 +1,24 @@
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import User from "../../services/User";
-import { LoginUser, getUser } from "../../services/UserService";
+// import User from "../../services/User";
+import {LoginUser} from '../../services/UserService'; 
 import carbonLogo from "../../assets/static/images/carbonLogo.png";
 
 const UserLogin = (props) => {
   let history = useHistory();
 
-
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-  const userService = new User();
+  // const userService = new User();
 
   const loginUser = (e) => {
     e.preventDefault();
-    userService
-      .loginUser(loginEmail, loginPassword)
-      .then((res) => console.log(res))
-      
-      history.push('/users/detail')
+    LoginUser(loginEmail, loginPassword).then((res) => {
+      console.log(res);
+    });
+
+    setTimeout(history.push('/users/detail'), 1500)
   };
 
   return (

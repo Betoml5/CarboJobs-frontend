@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import carbonIcon from "../assets/static/images/carbonLogo.png";
@@ -7,17 +7,19 @@ import accountIcon from "../assets/static/images/account.png";
 import afiliateIcon from "../assets/static/images/network.png";
 import aboutIcon from "../assets/static/images/about.png";
 import menuBtnWhite from "../assets/static/images/menuIconWhite.png";
-import registerIcon from '../assets/static/images/add-user.png';
+import registerIcon from "../assets/static/images/add-user.png";
 
 const Header = () => {
-  const hasUser = false;
-
   const menuRes = useRef();
   //Aqui vamos a validar el menu responsive.
-
+  let hasUser
   const handleMenu = () => {
     menuRes.current.classList.toggle("showMenu");
   };
+  hasUser = localStorage.getItem("user");
+
+  useEffect(() => {
+  }, []);
 
   return (
     <header className="header">
@@ -40,35 +42,33 @@ const Header = () => {
             exact={true}
             activeClassName="is-active"
             className="header__menu-item"
-            to="/users/1"
+            to="/users/detail"
           >
             <img src={accountIcon} alt="" />
             <p>Cuenta</p>
           </NavLink>
         ) : (
-            <NavLink
-              exact={true}
-              activeClassName="is-active"
-              className="header__menu-item"
-              to="/users/login"
-            >
-              <img src={accountIcon} alt="" />
-              <p>Iniciar Sesion</p>
-            </NavLink>
-          )}
-          {
-          hasUser ?
-          null 
-          : <NavLink
-          exact={true}
-          activeClassName="is-active"
-          className="header__menu-item"
-          to="/users/register">
-            <img src={registerIcon} alt="accountIcon"/>
+          <NavLink
+            exact={true}
+            activeClassName="is-active"
+            className="header__menu-item"
+            to="/users/login"
+          >
+            <img src={accountIcon} alt="" />
+            <p>Iniciar Sesion</p>
+          </NavLink>
+        )}
+        {hasUser ? null : (
+          <NavLink
+            exact={true}
+            activeClassName="is-active"
+            className="header__menu-item"
+            to="/users/register"
+          >
+            <img src={registerIcon} alt="accountIcon" />
             <p>Registrarse</p>
-        </NavLink>
-        
-        }
+          </NavLink>
+        )}
         <NavLink
           exact={true}
           activeClassName="is-active"

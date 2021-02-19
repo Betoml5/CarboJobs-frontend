@@ -9,32 +9,32 @@ const LoginUser = async (email, password) => {
         email,
         password,
       },
-      withCredentials: true,
-      url: `${API}/login`,
+      url: `${API}/pass`,
     });
+
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("user", JSON.stringify(response.data.payload));
+
     return response;
   } catch (error) {
     console.log(error);
   }
 };
 
-const LogoutUser = async () => {
-  const response = await axios({
-    method: "GET",
-    url: `${API}/logout`,
-    withCredentials: true,
-  });
-  return response;
+const LogoutUser = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
 };
 
-const getUser = async () => {
+const getUser = async (id) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `${API}/pass`,
-      withCredentials: true,
+      url: `${API}/${id}`,
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
     });
-
     return response;
   } catch (error) {
     console.log(error);

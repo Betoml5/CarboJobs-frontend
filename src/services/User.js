@@ -14,37 +14,32 @@ class User {
           email,
           password,
         },
-        withCredentials: true,
-        url: `${this.API}/login`,
-      });
-
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async logoutUser() {
-    try {
-      const response = await this.Axios({
-        method: "GET",
-        url: `${this.API}/logout`,
-        withCredentials: true,
-      });
-      return response;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async getUser() {
-    try {
-      const response = await this.Axios({
-        method: "GET",
         url: `${this.API}/pass`,
-        withCredentials: true,
       });
 
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.payload));
+
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  logoutUser() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  }
+
+  async getUserById(id) {
+    try {
+      const response = await this.Axios({
+        method: "GET",
+        url: `${this.API}/${id}`,
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       return response;
     } catch (error) {
       console.log(error);
